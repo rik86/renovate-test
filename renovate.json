@@ -4,22 +4,18 @@
   "labels": ["renovate"],
   "schedule": ["after 7:00 before 19:00 every weekday"],
   "timezone": "Europe/Berlin",
-  "enabledManagers": [
-        "regexManagers",
-        "github-actions"
-    ],
-    "regexManagers": [{
-        "fileMatch": [
-            "Dockerfile"
-        ],
-        "matchStrings": [
-            "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( versioning=(?<versioning>.*?))?\\nENV .*?_VERSION=(?<currentValue>.*)"
-        ],
-        "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
-    }],
+  "regexManagers": [
+    {
+      "fileMatch": ["tf"],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( versioning=(?<versioning>.*?))?\\nENV .*?_VERSION=(?<currentValue>.*)"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    }
+  ],
   "packageRules": [
     {
-      "matchDatasources": [  "github-releases", "github-tags" ],
+      "matchDatasources": ["github-releases", "github-tags"],
       "automerge": false
     }
   ]
