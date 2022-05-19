@@ -1,0 +1,17 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base"],
+  "labels": ["renovate"],
+  "schedule": ["after 7:00 before 19:00 every weekday"],
+  "timezone": "Europe/Berlin",
+  "packageRules": [
+    {
+      "matchDatasources": ["npm"],
+      "automerge": false
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "automerge": false
+    }
+  ]
+}
