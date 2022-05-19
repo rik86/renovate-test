@@ -20,10 +20,9 @@ terraform {
   }
 }
 
-# renovate: datasource=github-releases depName=DigitalInnovation/terraform-mns-pagerduty extractVersion=^v(?<ref=>.*)$
-ARG git@github.com:PagerDuty/terraform-provider-pagerduty.git?ref=v2.0.0
 
 module "some_module" {
+  # renovate: datasource=github-releases depName=DigitalInnovation/terraform-mns-pagerduty extractVersion=^v(?<ref=>.*)$
   source    = "git@github.com:PagerDuty/terraform-provider-pagerduty.git?ref=v2.0.0"
   app_name  = "bla"
   threshold = 1
