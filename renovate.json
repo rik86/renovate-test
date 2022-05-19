@@ -6,17 +6,12 @@
   "timezone": "Europe/Berlin",
   "regexManagers": [
     {
-      "fileMatch": ["tf"],
-      "matchStrings": [
-        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( versioning=(?<versioning>.*?))?\\nENV .*?_VERSION=(?<currentValue>.*)"
+      "fileMatch": [
+        "tf"
       ],
-      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
-    }
-  ],
-  "packageRules": [
-    {
-      "matchDatasources": ["github-releases", "github-tags"],
-      "automerge": false
+      "matchStrings": [
+        "#\\srenovate:\\sdatasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?( extractVersion=(?<extractVersion>.*?))?\\s(ENV|ARG) .*?_VERSION=(?<currentValue>.*)\\s"
+      ]
     }
   ]
 }
