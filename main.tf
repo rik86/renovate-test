@@ -23,6 +23,7 @@ terraform {
 
 module "some_module" {
   # renovate: datasource=github-tags depName=terraform-mns-pagerduty
+  ENV ANSIBLE_VERSION=4.2.0
   source    = "git::github.com/DigitalInnovation/terraform-mns-pagerduty?ref=1.0.0"
   app_name  = "bla"
   threshold = 1
