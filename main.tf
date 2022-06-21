@@ -11,7 +11,7 @@ terraform {
     }
     newrelic = {
       source  = "newrelic/newrelic"
-      version = "~> 2.41.2"
+      version = "~> 2.48.0"
     }
     github = {
       source  = "integrations/github"
